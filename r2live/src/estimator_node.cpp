@@ -836,6 +836,9 @@ int main(int argc, char **argv) {
 
    get_ros_parameter(nh, "/use_k_fast", use_k_fast, true);
 
+   std::string path_timecost_log;
+   get_ros_parameter<::string>(nh, "/path_timecost_log", path_timecost_log, "/cost.log");
+
    if (g_camera_lidar_queue.m_if_write_res_to_bag) {
       g_camera_lidar_queue.init_rosbag_for_recording();
    }
@@ -865,8 +868,7 @@ int main(int argc, char **argv) {
    ros::spin();
 
    faster_lio::Timer::PrintAll();
-   std::string save_path{"/opt/catkin_ws/src/log/visual_kalmangain_timecost.log"};
-   faster_lio::Timer::DumpIntoFile(save_path);
+   faster_lio::Timer::DumpIntoFile(path_timecost_log);
 
    return 0;
 }
