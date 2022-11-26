@@ -26,6 +26,7 @@ docker run ${RUNTIME} --privileged -it --rm \
             --volume=$XSOCK:$XSOCK:rw \
             --volume=$XAUTH:$XAUTH:rw \
             --volume=/dev:/dev:rw \
+            -v /home/gskim/blog/git/r2live:/opt/catkin_ws/src \
 	    --device /dev/dri \
             --net=host \
 	    --ipc=host \

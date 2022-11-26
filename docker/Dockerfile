@@ -37,7 +37,6 @@ RUN cd ceres-solver-1.14.0 && mkdir ceres-bin && cd ceres-bin \
     && cmake .. && make install -j4
 
 # livox_ros_driver
-
 WORKDIR /opt/livox_build
 
 RUN wget -O livox.zip https://github.com/Livox-SDK/Livox-SDK/archive/refs/tags/v2.3.0.zip && unzip livox.zip

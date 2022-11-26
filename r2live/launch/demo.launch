@@ -17,6 +17,8 @@
     <param name="lidar_drag_cam_tim" type="int" value="10" />
     <param name="if_lidar_start_first" type="int" value="1" />
 
+    <param name="use_k_fast" type="bool" value="false" />
+
     <node pkg="r2live" type="lio_feat_extract" name="lio_feat_extract"  output="log"/>
 
     <group if="1">
